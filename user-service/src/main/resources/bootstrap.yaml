@@ -14,7 +14,6 @@ spring:
     config:
       enabled: true
       uri: http://localhost:9090
-grpc:
   client:
     doctor-service:
       negotiationType: PLAINTEXT

@@ -1,8 +1,11 @@
 package com.doctor.api.controller;
 
+import com.doctor.api.doctorclientgrpc.CsharGRPC;
 import com.doctor.api.doctorclientgrpc.DoctorGrpcServiceImpl;
 import com.doctor.api.dtos.CompleteInfoDTO;
 import com.doctor.api.dtos.SimpleUserDTO;
+import com.doctor.api.gepcmodel.CourseDetails;
+import com.doctor.api.gepcmodel.CsharCourse;
 import com.doctor.api.gepcmodel.DoctorGrpc;
 import com.doctor.api.models.User;
 import com.doctor.api.serviceImpl.UserServiceImpl;
@@ -15,6 +18,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import javax.validation.Valid;
 import java.util.Date;
 import java.util.List;
@@ -81,5 +85,15 @@ public class UserController extends GenericControllerImpl<User,UserServiceImpl> 
 //    public CompleteInfoDTO getCompletInfo(@PathVariable Long id){
 //        return userService.userAndDoctorProfile(id);
 //    }
+
+
+    @Autowired
+    private CsharGRPC csharService;
+
+    @GetMapping("cshar/{id}")
+    public CsharCourse getCourseDetailsUsingGRPC(@PathVariable Integer id){
+        return csharService.getCourseDetail(id);
+    }
+
 
 }

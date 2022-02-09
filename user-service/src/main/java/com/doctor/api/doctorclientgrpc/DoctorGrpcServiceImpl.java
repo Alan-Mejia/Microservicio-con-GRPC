@@ -17,6 +17,8 @@ public class DoctorGrpcServiceImpl {
 //    private doctorServiceGrpc.doctorServiceFutureStub doctorServiceFutureStub; //For asynchronous call
 //
 //    // For synchronous call
+
+    // Felipe Gavilan
 @GrpcClient("doctor-service")
 private com.doctorsrvc.grpc.doctorServiceGrpc.doctorServiceBlockingStub doctorServiceBlockingStub;
 

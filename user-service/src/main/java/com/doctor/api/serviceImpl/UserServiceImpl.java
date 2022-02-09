@@ -1,11 +1,13 @@
 package com.doctor.api.serviceImpl;
 
 
+import com.doctor.api.doctorclientgrpc.CsharGRPC;
 import com.doctor.api.doctorclientgrpc.DoctorGrpcServiceImpl;
 import com.doctor.api.dtos.CompleteInfoDTO;
 import com.doctor.api.dtos.GenericMapperDTO;
 import com.doctor.api.dtos.SimpleUserDTO;
 import com.doctor.api.exception.ResourceNotFoundException;
+import com.doctor.api.gepcmodel.CourseDetails;
 import com.doctor.api.gepcmodel.DoctorGrpc;
 import com.doctor.api.models.User;
 import com.doctor.api.respository.GenericRepository;
